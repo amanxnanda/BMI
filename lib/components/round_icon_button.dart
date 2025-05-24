@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class RoundIconButton extends StatelessWidget {
   RoundIconButton(
-      {@required this.icon, @required this.onPressed, this.onLongPress});
+      {required this.icon, required this.onPressed, this.onLongPress});
   final IconData icon;
-  final Function onPressed;
-  final Function onLongPress;
+  final VoidCallback onPressed;
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class RoundIconButton extends StatelessWidget {
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
       onPressed: onPressed,
+      onLongPress: onLongPress,
     );
   }
 }

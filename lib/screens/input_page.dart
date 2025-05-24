@@ -1,13 +1,12 @@
+import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/components/icon_content.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:bmi_calculator/components/reusable_card.dart';
-import 'package:bmi_calculator/calculator_brain.dart';
-import 'package:bmi_calculator/components/icon_content.dart';
-import 'package:bmi_calculator/constants.dart';
-import 'results_page.dart';
-import 'package:bmi_calculator/components/bottom_button.dart';
-import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:vibration/vibration.dart';
 
 enum Gender {
@@ -24,7 +23,7 @@ class _InputPageState extends State<InputPage> {
   int height = 180;
   int weight = 60;
   int age = 20;
-  Gender selectedGender;
+  Gender? selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -164,6 +163,15 @@ class _InputPageState extends State<InputPage> {
                                     }
                                   });
                                 },
+                                onLongPress: () {
+                                  Vibration.vibrate(
+                                    duration: 100,
+                                    amplitude: 10,
+                                  );
+                                  setState(() {
+                                    weight -= 5;
+                                  });
+                                },
                               ),
                               SizedBox(
                                 width: 10,
@@ -180,9 +188,12 @@ class _InputPageState extends State<InputPage> {
                                   });
                                 },
                                 onLongPress: () {
+                                  Vibration.vibrate(
+                                    duration: 100,
+                                    amplitude: 10,
+                                  );
                                   setState(() {
-                                    weight++;
-                                    print('pressed Long');
+                                    weight += 5;
                                   });
                                 },
                               ),
@@ -222,6 +233,15 @@ class _InputPageState extends State<InputPage> {
                                     }
                                   });
                                 },
+                                onLongPress: () {
+                                  Vibration.vibrate(
+                                    duration: 100,
+                                    amplitude: 10,
+                                  );
+                                  setState(() {
+                                    age -= 5;
+                                  });
+                                },
                               ),
                               SizedBox(
                                 width: 10,
@@ -235,6 +255,15 @@ class _InputPageState extends State<InputPage> {
                                   );
                                   setState(() {
                                     age++;
+                                  });
+                                },
+                                onLongPress: () {
+                                  Vibration.vibrate(
+                                    duration: 100,
+                                    amplitude: 10,
+                                  );
+                                  setState(() {
+                                    age += 5;
                                   });
                                 },
                               ),
