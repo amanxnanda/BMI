@@ -4,15 +4,15 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  vibration: ^1.4.0
-  font_awesome_flutter: ^8.8.1
+  vibration: ^3.1.3
+  font_awesome_flutter: ^10.8.0
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:

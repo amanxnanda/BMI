@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import '../constants.dart';
 
 class BottomButton extends StatelessWidget {
-  BottomButton({@required this.onTap, @required this.buttonTitle});
+  BottomButton({required this.onTap, required this.buttonTitle,});
   final String buttonTitle;
-  final Function onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,4 +26,3 @@ class BottomButton extends StatelessWidget {
     );
   }
 }
-
